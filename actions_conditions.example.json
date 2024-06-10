@@ -1,0 +1,31 @@
+{
+    "conditions": [
+        {
+            "type": "title",
+            "operator": "equals",
+            "value": "FooPay"
+        },
+        {
+            "type": "snippet",
+            "operator": "startsWith",
+            "value": "You received a payment of "
+        }
+    ],
+    "actions": [
+        {
+            "method": "post",
+            "url": "https://foobar.com/send-mail",
+            "params": {
+                "subject": "Match found",
+                "body": "Hey, I found a match! \r\n\r\nHere is the title: \r\n%%TITLE%% \r\n\r\nand the full snippet: \r\n%%SNIPPET%%"
+            }
+        },
+        {
+            "method": "get",
+            "url": "https://foobar.com/log",
+            "params": {
+                "sms-title": "%%TITLE%%"
+            }
+        }
+    ]
+}

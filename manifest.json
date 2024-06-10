@@ -12,5 +12,11 @@
         "run_at": "document_end",
         "js": ["content.js"]
       }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["actions_conditions.json"],
+        "matches": ["<all_urls>"]
+      }
     ]
 }
