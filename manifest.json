@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "sms-actions",
+    "version": "1.0",
+    "description": "Chrome Extension to monitor messages on messages.google.com/web and take actions on conditions",
+    "permissions": [
+      "activeTab"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://messages.google.com/web/*"],
+        "run_at": "document_end",
+        "js": ["content.js"]
+      }
+    ]
+}
